@@ -6,9 +6,11 @@ import Tournaments from "./pages/Tournaments";
 import PublicLayout from "./layouts/Layout"
 import Dashboard from "./pages/Dashboard";
 import Lobbies from "./pages/Lobbies";
-import AdminLobbies from "./pages/adminLobbies";
-import AuthenticatedWrapper from "./context/AuthenticatedWrapper";
+import AdminLobbies from "./pages/AdminLobbies";
+import ManageEvents from "./pages/ManageEvents";
 import CreateEvent from "./pages/CreateEvent";
+import AuthenticatedWrapper from "./context/AuthenticatedWrapper";
+
 
 export const router = createBrowserRouter([
     { path: "/", element: <PublicLayout />, children: [
@@ -19,6 +21,7 @@ export const router = createBrowserRouter([
     { path: "/lobbies/:lobbyid", element: <Lobbies />},
     { path: "/dashboard/:user", element: <AuthenticatedWrapper><Dashboard /></AuthenticatedWrapper>},
     { path: "/createevent", element: <AuthenticatedWrapper><CreateEvent /></AuthenticatedWrapper>},
-    { path: "/adminlobbies/:lobbyid", element:<AuthenticatedWrapper><AdminLobbies /></AuthenticatedWrapper>}
+    { path: "/adminlobbies/:lobbyid", element:<AuthenticatedWrapper><AdminLobbies /></AuthenticatedWrapper>},
+    { path: "/manageevents/:user", element:<AuthenticatedWrapper><ManageEvents /></AuthenticatedWrapper>}
     ]}
 ])

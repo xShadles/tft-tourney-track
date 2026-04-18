@@ -2,6 +2,7 @@ import DateInput from "../props/DateInput"
 import TimeInput from "../props/TimeInput"
 import { supabase } from "../context/SupabaseClient";
 import {useState} from "react"
+import { DashboardSidebar } from "../components/DashboardSidebar"
 
 const CreateEvent = () => {
     const [tournamentName,setTournamentName] = useState("");
@@ -18,8 +19,8 @@ const CreateEvent = () => {
         const {error} = await supabase
         .from('tournaments')
         .insert({
-            tournament_name: tournamentName,
-            prize: prize,
+            name: tournamentName,
+            prize_pool: prize,
             start_date: startDate,
             end_date: endDate,
             start_time: startTime
@@ -33,7 +34,9 @@ const CreateEvent = () => {
     }
 
 
-    return<div className="bg-orange-500/50 min-h-screen">
+    return<div className="flex">
+    <DashboardSidebar></DashboardSidebar>
+    <div className="bg-orange-500/50 w-screen min-h-screen"> 
         <div className="border-2 m-30 bg-gray-900/50">
         <form className="space-y-8">
             <h1 className="text-3xl text-red-500 font-semibold text-red-500 mb-6 text-center">
@@ -83,6 +86,7 @@ const CreateEvent = () => {
         </form>
         </div>
     </div>
+</div>
 }
 
 export default CreateEvent

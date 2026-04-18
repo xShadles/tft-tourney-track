@@ -53,9 +53,5 @@ const [displayName, setDisplayName] = useState<string | null>(null);
             Login
             </NavLink>
 
-            <NavLink 
-            to="/createevent">
-            Create Event
-            </NavLink>
         </nav>
 }

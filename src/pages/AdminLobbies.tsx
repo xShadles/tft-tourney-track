@@ -1,9 +1,9 @@
-
+import { DashboardSidebar } from "../components/DashboardSidebar"
 const AdminLobbies= () => {
     
-    return<>
-    <p>hello!</p>
-    </>
+    return<div className="flex">
+    <DashboardSidebar></DashboardSidebar>
+    </div>
 }
 
 
